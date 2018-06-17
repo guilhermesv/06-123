@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="fec12762-f22e-4d36-be34-1ccca928cdc9">
+    <property name="canvasHeight" value="1346"/>
+    <property name="canvasWidth" value="1080"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine4">
+        <node name="Corda1" position="8.00,7.00" prototype="core.network" renderedChild="colorize1">
+            <node name="add1" position="1.00,4.00" prototype="math.add"/>
+            <node name="add2" position="4.00,1.00" prototype="math.add"/>
+            <node name="align1" position="0.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="none"/>
+            </node>
+            <node name="colorize1" position="0.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+                <port name="stroke" type="color" value="#6e00e2ff"/>
+                <port name="strokeWidth" type="float" value="30.0"/>
+            </node>
+            <node name="connect1" position="0.00,7.00" prototype="corevector.connect">
+                <port name="closed" type="boolean" value="false"/>
+            </node>
+            <node name="fit1" position="0.00,10.00" prototype="corevector.fit">
+                <port name="height" type="float" value="1346.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="frame1" position="4.00,-2.00" prototype="core.frame"/>
+            <node name="make_point1" position="0.00,6.00" prototype="corevector.make_point"/>
+            <node name="multiply1" position="4.00,-1.00" prototype="math.multiply">
+                <port name="value2" type="float" value="5.0"/>
+            </node>
+            <node name="rotate1" position="0.00,8.00" prototype="corevector.rotate">
+                <port name="angle" type="float" value="90.0"/>
+            </node>
+            <node name="sample1" position="0.00,-2.00" prototype="math.sample">
+                <port name="amount" type="int" value="100"/>
+                <port name="end" type="float" value="400.0"/>
+            </node>
+            <node name="wave1" position="1.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="113.0"/>
+                <port name="period" type="float" value="400.0"/>
+            </node>
+            <node name="wave2" position="4.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="65.0"/>
+                <port name="period" type="float" value="200.0"/>
+            </node>
+            <port childReference="wave1.period" description="" label="" name="wavePeriod-1" range="value" type="float" value="400.0" widget="float"/>
+            <port childReference="wave2.period" description="" label="" name="wavePeriod-2" range="value" type="float" value="200.0" widget="float"/>
+            <port childReference="colorize1.stroke" description="The new stroke color." label="" name="strokeC" range="value" type="color" value="#6e00e2ff" widget="color"/>
+            <port childReference="colorize1.strokeWidth" description="The new stroke width. Set to 0 for no stroke." label="" min="0.0" name="strokeWidth" range="value" type="float" value="30.0" widget="float"/>
+            <port childReference="multiply1.value2" description="" label="" name="Velocidade" range="value" type="float" value="5.0" widget="float"/>
+            <port childReference="wave1.max" description="" label="" name="max1" range="value" type="float" value="113.0" widget="float"/>
+            <port childReference="wave2.max" description="" label="" name="max2" range="value" type="float" value="65.0" widget="float"/>
+            <conn input="make_point1.x" output="sample1"/>
+            <conn input="connect1.points" output="make_point1"/>
+            <conn input="add1.value1" output="wave1"/>
+            <conn input="make_point1.y" output="add1"/>
+            <conn input="add1.value2" output="wave2"/>
+            <conn input="add2.value1" output="sample1"/>
+            <conn input="wave2.offset" output="add2"/>
+            <conn input="wave1.offset" output="sample1"/>
+            <conn input="multiply1.value1" output="frame1"/>
+            <conn input="add2.value2" output="multiply1"/>
+            <conn input="rotate1.shape" output="connect1"/>
+            <conn input="align1.shape" output="rotate1"/>
+            <conn input="fit1.shape" output="align1"/>
+            <conn input="colorize1.shape" output="fit1"/>
+        </node>
+        <node name="Corda2" position="5.00,7.00" prototype="core.network" renderedChild="colorize1">
+            <node name="add1" position="1.00,4.00" prototype="math.add"/>
+            <node name="add2" position="4.00,1.00" prototype="math.add"/>
+            <node name="align1" position="0.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="none"/>
+            </node>
+            <node name="colorize1" position="0.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+                <port name="stroke" type="color" value="#ff0000ff"/>
+                <port name="strokeWidth" type="float" value="30.0"/>
+            </node>
+            <node name="connect1" position="0.00,7.00" prototype="corevector.connect">
+                <port name="closed" type="boolean" value="false"/>
+            </node>
+            <node name="fit1" position="0.00,10.00" prototype="corevector.fit">
+                <port name="height" type="float" value="1346.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="frame1" position="4.00,-2.00" prototype="core.frame"/>
+            <node name="make_point1" position="0.00,6.00" prototype="corevector.make_point"/>
+            <node name="multiply1" position="4.00,-1.00" prototype="math.multiply">
+                <port name="value2" type="float" value="5.0"/>
+            </node>
+            <node name="rotate1" position="0.00,8.00" prototype="corevector.rotate">
+                <port name="angle" type="float" value="90.0"/>
+            </node>
+            <node name="sample1" position="0.00,-2.00" prototype="math.sample">
+                <port name="amount" type="int" value="100"/>
+                <port name="end" type="float" value="400.0"/>
+            </node>
+            <node name="wave1" position="1.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="10.0"/>
+                <port name="period" type="float" value="100.0"/>
+            </node>
+            <node name="wave2" position="4.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="30.0"/>
+                <port name="period" type="float" value="200.0"/>
+            </node>
+            <port childReference="wave1.period" description="" label="" name="wavePeriod-1" range="value" type="float" value="100.0" widget="float"/>
+            <port childReference="wave2.period" description="" label="" name="wavePeriod-2" range="value" type="float" value="200.0" widget="float"/>
+            <port childReference="colorize1.stroke" description="The new stroke color." label="" name="strokeC" range="value" type="color" value="#ff0000ff" widget="color"/>
+            <port childReference="colorize1.strokeWidth" description="The new stroke width. Set to 0 for no stroke." label="" min="0.0" name="strokeWidth" range="value" type="float" value="30.0" widget="float"/>
+            <port childReference="multiply1.value2" description="" label="" name="Velocidade" range="value" type="float" value="5.0" widget="float"/>
+            <port childReference="wave1.max" description="" label="" name="max1" range="value" type="float" value="10.0" widget="float"/>
+            <port childReference="wave2.max" description="" label="" name="max2" range="value" type="float" value="30.0" widget="float"/>
+            <conn input="make_point1.x" output="sample1"/>
+            <conn input="connect1.points" output="make_point1"/>
+            <conn input="add1.value1" output="wave1"/>
+            <conn input="make_point1.y" output="add1"/>
+            <conn input="add1.value2" output="wave2"/>
+            <conn input="add2.value1" output="sample1"/>
+            <conn input="wave2.offset" output="add2"/>
+            <conn input="wave1.offset" output="sample1"/>
+            <conn input="multiply1.value1" output="frame1"/>
+            <conn input="add2.value2" output="multiply1"/>
+            <conn input="rotate1.shape" output="connect1"/>
+            <conn input="align1.shape" output="rotate1"/>
+            <conn input="fit1.shape" output="align1"/>
+            <conn input="colorize1.shape" output="fit1"/>
+        </node>
+        <node name="Corda3" position="11.00,7.00" prototype="core.network" renderedChild="colorize1">
+            <node name="add1" position="1.00,4.00" prototype="math.add"/>
+            <node name="add2" position="4.00,1.00" prototype="math.add"/>
+            <node name="align1" position="0.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="none"/>
+            </node>
+            <node name="colorize1" position="0.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+                <port name="stroke" type="color" value="#00f9dfff"/>
+                <port name="strokeWidth" type="float" value="30.0"/>
+            </node>
+            <node name="connect1" position="0.00,7.00" prototype="corevector.connect">
+                <port name="closed" type="boolean" value="false"/>
+            </node>
+            <node name="fit1" position="0.00,10.00" prototype="corevector.fit">
+                <port name="height" type="float" value="1346.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="frame1" position="4.00,-2.00" prototype="core.frame"/>
+            <node name="make_point1" position="0.00,6.00" prototype="corevector.make_point"/>
+            <node name="multiply1" position="4.00,-1.00" prototype="math.multiply">
+                <port name="value2" type="float" value="5.0"/>
+            </node>
+            <node name="rotate1" position="0.00,8.00" prototype="corevector.rotate">
+                <port name="angle" type="float" value="90.0"/>
+            </node>
+            <node name="sample1" position="0.00,-2.00" prototype="math.sample">
+                <port name="amount" type="int" value="100"/>
+                <port name="end" type="float" value="400.0"/>
+            </node>
+            <node name="wave1" position="1.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="10.0"/>
+                <port name="period" type="float" value="100.0"/>
+            </node>
+            <node name="wave2" position="4.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="-38.0"/>
+                <port name="period" type="float" value="400.0"/>
+            </node>
+            <port childReference="wave1.period" description="" label="" name="wavePeriod-1" range="value" type="float" value="100.0" widget="float"/>
+            <port childReference="wave2.period" description="" label="" name="wavePeriod-2" range="value" type="float" value="400.0" widget="float"/>
+            <port childReference="colorize1.stroke" description="The new stroke color." label="" name="strokeC" range="value" type="color" value="#00f9dfff" widget="color"/>
+            <port childReference="colorize1.strokeWidth" description="The new stroke width. Set to 0 for no stroke." label="" min="0.0" name="strokeWidth" range="value" type="float" value="30.0" widget="float"/>
+            <port childReference="multiply1.value2" description="" label="" name="Velocidade" range="value" type="float" value="5.0" widget="float"/>
+            <port childReference="wave1.max" description="" label="" name="max1" range="value" type="float" value="10.0" widget="float"/>
+            <port childReference="wave2.max" description="" label="" name="max2" range="value" type="float" value="-38.0" widget="float"/>
+            <conn input="make_point1.x" output="sample1"/>
+            <conn input="connect1.points" output="make_point1"/>
+            <conn input="add1.value1" output="wave1"/>
+            <conn input="make_point1.y" output="add1"/>
+            <conn input="add1.value2" output="wave2"/>
+            <conn input="add2.value1" output="sample1"/>
+            <conn input="wave2.offset" output="add2"/>
+            <conn input="wave1.offset" output="sample1"/>
+            <conn input="multiply1.value1" output="frame1"/>
+            <conn input="add2.value2" output="multiply1"/>
+            <conn input="rotate1.shape" output="connect1"/>
+            <conn input="align1.shape" output="rotate1"/>
+            <conn input="fit1.shape" output="align1"/>
+            <conn input="colorize1.shape" output="fit1"/>
+        </node>
+        <node name="Corda4" position="14.00,7.00" prototype="core.network" renderedChild="colorize1">
+            <node name="add1" position="1.00,4.00" prototype="math.add"/>
+            <node name="add2" position="4.00,1.00" prototype="math.add"/>
+            <node name="align1" position="0.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="none"/>
+            </node>
+            <node name="colorize1" position="0.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+                <port name="stroke" type="color" value="#f4d700ff"/>
+                <port name="strokeWidth" type="float" value="30.0"/>
+            </node>
+            <node name="connect1" position="0.00,7.00" prototype="corevector.connect">
+                <port name="closed" type="boolean" value="false"/>
+            </node>
+            <node name="fit1" position="0.00,10.00" prototype="corevector.fit">
+                <port name="height" type="float" value="1346.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="frame1" position="4.00,-2.00" prototype="core.frame"/>
+            <node name="make_point1" position="0.00,6.00" prototype="corevector.make_point"/>
+            <node name="multiply1" position="4.00,-1.00" prototype="math.multiply">
+                <port name="value2" type="float" value="4.0"/>
+            </node>
+            <node name="rotate1" position="0.00,8.00" prototype="corevector.rotate">
+                <port name="angle" type="float" value="90.0"/>
+            </node>
+            <node name="sample1" position="0.00,-2.00" prototype="math.sample">
+                <port name="amount" type="int" value="100"/>
+                <port name="end" type="float" value="400.0"/>
+            </node>
+            <node name="wave1" position="1.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="42.0"/>
+                <port name="period" type="float" value="400.0"/>
+            </node>
+            <node name="wave2" position="4.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="-38.0"/>
+                <port name="period" type="float" value="200.0"/>
+            </node>
+            <port childReference="wave1.period" description="" label="" name="wavePeriod-1" range="value" type="float" value="400.0" widget="float"/>
+            <port childReference="wave2.period" description="" label="" name="wavePeriod-2" range="value" type="float" value="200.0" widget="float"/>
+            <port childReference="colorize1.stroke" description="The new stroke color." label="" name="strokeC" range="value" type="color" value="#f4d700ff" widget="color"/>
+            <port childReference="colorize1.strokeWidth" description="The new stroke width. Set to 0 for no stroke." label="" min="0.0" name="strokeWidth" range="value" type="float" value="30.0" widget="float"/>
+            <port childReference="multiply1.value2" description="" label="" name="Velocidade" range="value" type="float" value="4.0" widget="float"/>
+            <port childReference="wave1.max" description="" label="" name="max1" range="value" type="float" value="42.0" widget="float"/>
+            <port childReference="wave2.max" description="" label="" name="max2" range="value" type="float" value="-38.0" widget="float"/>
+            <conn input="make_point1.x" output="sample1"/>
+            <conn input="connect1.points" output="make_point1"/>
+            <conn input="add1.value1" output="wave1"/>
+            <conn input="make_point1.y" output="add1"/>
+            <conn input="add1.value2" output="wave2"/>
+            <conn input="add2.value1" output="sample1"/>
+            <conn input="wave2.offset" output="add2"/>
+            <conn input="wave1.offset" output="sample1"/>
+            <conn input="multiply1.value1" output="frame1"/>
+            <conn input="add2.value2" output="multiply1"/>
+            <conn input="rotate1.shape" output="connect1"/>
+            <conn input="align1.shape" output="rotate1"/>
+            <conn input="fit1.shape" output="align1"/>
+            <conn input="colorize1.shape" output="fit1"/>
+        </node>
+        <node name="Corda5" position="31.00,7.00" prototype="core.network" renderedChild="colorize1">
+            <node name="add1" position="1.00,4.00" prototype="math.add"/>
+            <node name="add2" position="4.00,1.00" prototype="math.add"/>
+            <node name="align1" position="0.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="none"/>
+            </node>
+            <node name="colorize1" position="0.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+                <port name="stroke" type="color" value="#6e00e2ff"/>
+                <port name="strokeWidth" type="float" value="23.0"/>
+            </node>
+            <node name="connect1" position="0.00,7.00" prototype="corevector.connect">
+                <port name="closed" type="boolean" value="false"/>
+            </node>
+            <node name="fit1" position="0.00,10.00" prototype="corevector.fit">
+                <port name="height" type="float" value="1346.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="frame1" position="4.00,-2.00" prototype="core.frame"/>
+            <node name="make_point1" position="0.00,6.00" prototype="corevector.make_point"/>
+            <node name="multiply1" position="4.00,-1.00" prototype="math.multiply">
+                <port name="value2" type="float" value="5.0"/>
+            </node>
+            <node name="rotate1" position="0.00,8.00" prototype="corevector.rotate">
+                <port name="angle" type="float" value="90.0"/>
+            </node>
+            <node name="sample1" position="0.00,-2.00" prototype="math.sample">
+                <port name="amount" type="int" value="20"/>
+                <port name="end" type="float" value="400.0"/>
+            </node>
+            <node name="wave1" position="1.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="113.0"/>
+                <port name="period" type="float" value="400.0"/>
+            </node>
+            <node name="wave2" position="4.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="65.0"/>
+                <port name="period" type="float" value="200.0"/>
+            </node>
+            <port childReference="wave1.period" description="" label="" name="wavePeriod-1" range="value" type="float" value="400.0" widget="float"/>
+            <port childReference="wave2.period" description="" label="" name="wavePeriod-2" range="value" type="float" value="200.0" widget="float"/>
+            <port childReference="colorize1.stroke" description="The new stroke color." label="" name="strokeC" range="value" type="color" value="#6e00e2ff" widget="color"/>
+            <port childReference="colorize1.strokeWidth" description="The new stroke width. Set to 0 for no stroke." label="" min="0.0" name="strokeWidth" range="value" type="float" value="23.0" widget="float"/>
+            <port childReference="multiply1.value2" description="" label="" name="Velocidade" range="value" type="float" value="5.0" widget="float"/>
+            <port childReference="wave1.max" description="" label="" name="max1" range="value" type="float" value="113.0" widget="float"/>
+            <port childReference="wave2.max" description="" label="" name="max2" range="value" type="float" value="65.0" widget="float"/>
+            <conn input="make_point1.x" output="sample1"/>
+            <conn input="connect1.points" output="make_point1"/>
+            <conn input="add1.value1" output="wave1"/>
+            <conn input="make_point1.y" output="add1"/>
+            <conn input="add1.value2" output="wave2"/>
+            <conn input="add2.value1" output="sample1"/>
+            <conn input="wave2.offset" output="add2"/>
+            <conn input="wave1.offset" output="sample1"/>
+            <conn input="multiply1.value1" output="frame1"/>
+            <conn input="add2.value2" output="multiply1"/>
+            <conn input="rotate1.shape" output="connect1"/>
+            <conn input="align1.shape" output="rotate1"/>
+            <conn input="fit1.shape" output="align1"/>
+            <conn input="colorize1.shape" output="fit1"/>
+        </node>
+        <node name="Corda6" position="28.00,7.00" prototype="core.network" renderedChild="colorize1">
+            <node name="add1" position="1.00,4.00" prototype="math.add"/>
+            <node name="add2" position="4.00,1.00" prototype="math.add"/>
+            <node name="align1" position="0.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="none"/>
+            </node>
+            <node name="colorize1" position="0.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+                <port name="stroke" type="color" value="#ff0000ff"/>
+                <port name="strokeWidth" type="float" value="10.0"/>
+            </node>
+            <node name="connect1" position="0.00,7.00" prototype="corevector.connect">
+                <port name="closed" type="boolean" value="false"/>
+            </node>
+            <node name="fit1" position="0.00,10.00" prototype="corevector.fit">
+                <port name="height" type="float" value="1346.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="frame1" position="4.00,-2.00" prototype="core.frame"/>
+            <node name="make_point1" position="0.00,6.00" prototype="corevector.make_point"/>
+            <node name="multiply1" position="4.00,-1.00" prototype="math.multiply">
+                <port name="value2" type="float" value="5.0"/>
+            </node>
+            <node name="rotate1" position="0.00,8.00" prototype="corevector.rotate">
+                <port name="angle" type="float" value="90.0"/>
+            </node>
+            <node name="sample1" position="0.00,-2.00" prototype="math.sample">
+                <port name="amount" type="int" value="30"/>
+                <port name="end" type="float" value="400.0"/>
+            </node>
+            <node name="wave1" position="1.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="10.0"/>
+                <port name="period" type="float" value="100.0"/>
+            </node>
+            <node name="wave2" position="4.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="30.0"/>
+                <port name="period" type="float" value="200.0"/>
+            </node>
+            <port childReference="wave1.period" description="" label="" name="wavePeriod-1" range="value" type="float" value="100.0" widget="float"/>
+            <port childReference="wave2.period" description="" label="" name="wavePeriod-2" range="value" type="float" value="200.0" widget="float"/>
+            <port childReference="colorize1.stroke" description="The new stroke color." label="" name="strokeC" range="value" type="color" value="#ff0000ff" widget="color"/>
+            <port childReference="colorize1.strokeWidth" description="The new stroke width. Set to 0 for no stroke." label="" min="0.0" name="strokeWidth" range="value" type="float" value="10.0" widget="float"/>
+            <port childReference="multiply1.value2" description="" label="" name="Velocidade" range="value" type="float" value="5.0" widget="float"/>
+            <port childReference="wave1.max" description="" label="" name="max1" range="value" type="float" value="10.0" widget="float"/>
+            <port childReference="wave2.max" description="" label="" name="max2" range="value" type="float" value="30.0" widget="float"/>
+            <conn input="make_point1.x" output="sample1"/>
+            <conn input="connect1.points" output="make_point1"/>
+            <conn input="add1.value1" output="wave1"/>
+            <conn input="make_point1.y" output="add1"/>
+            <conn input="add1.value2" output="wave2"/>
+            <conn input="add2.value1" output="sample1"/>
+            <conn input="wave2.offset" output="add2"/>
+            <conn input="wave1.offset" output="sample1"/>
+            <conn input="multiply1.value1" output="frame1"/>
+            <conn input="add2.value2" output="multiply1"/>
+            <conn input="rotate1.shape" output="connect1"/>
+            <conn input="align1.shape" output="rotate1"/>
+            <conn input="fit1.shape" output="align1"/>
+            <conn input="colorize1.shape" output="fit1"/>
+        </node>
+        <node name="Corda7" position="34.00,7.00" prototype="core.network" renderedChild="colorize1">
+            <node name="add1" position="1.00,4.00" prototype="math.add"/>
+            <node name="add2" position="4.00,1.00" prototype="math.add"/>
+            <node name="align1" position="0.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="none"/>
+            </node>
+            <node name="colorize1" position="0.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+                <port name="stroke" type="color" value="#00f9dfff"/>
+                <port name="strokeWidth" type="float" value="11.0"/>
+            </node>
+            <node name="connect1" position="0.00,7.00" prototype="corevector.connect">
+                <port name="closed" type="boolean" value="false"/>
+            </node>
+            <node name="fit1" position="0.00,10.00" prototype="corevector.fit">
+                <port name="height" type="float" value="1346.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="frame1" position="4.00,-2.00" prototype="core.frame"/>
+            <node name="make_point1" position="0.00,6.00" prototype="corevector.make_point"/>
+            <node name="multiply1" position="4.00,-1.00" prototype="math.multiply">
+                <port name="value2" type="float" value="5.0"/>
+            </node>
+            <node name="rotate1" position="0.00,8.00" prototype="corevector.rotate">
+                <port name="angle" type="float" value="90.0"/>
+            </node>
+            <node name="sample1" position="0.00,-2.00" prototype="math.sample">
+                <port name="amount" type="int" value="30"/>
+                <port name="end" type="float" value="400.0"/>
+            </node>
+            <node name="wave1" position="1.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="10.0"/>
+                <port name="period" type="float" value="100.0"/>
+            </node>
+            <node name="wave2" position="4.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="-38.0"/>
+                <port name="period" type="float" value="400.0"/>
+            </node>
+            <port childReference="wave1.period" description="" label="" name="wavePeriod-1" range="value" type="float" value="100.0" widget="float"/>
+            <port childReference="wave2.period" description="" label="" name="wavePeriod-2" range="value" type="float" value="400.0" widget="float"/>
+            <port childReference="colorize1.stroke" description="The new stroke color." label="" name="strokeC" range="value" type="color" value="#00f9dfff" widget="color"/>
+            <port childReference="colorize1.strokeWidth" description="The new stroke width. Set to 0 for no stroke." label="" min="0.0" name="strokeWidth" range="value" type="float" value="11.0" widget="float"/>
+            <port childReference="multiply1.value2" description="" label="" name="Velocidade" range="value" type="float" value="5.0" widget="float"/>
+            <port childReference="wave1.max" description="" label="" name="max1" range="value" type="float" value="10.0" widget="float"/>
+            <port childReference="wave2.max" description="" label="" name="max2" range="value" type="float" value="-38.0" widget="float"/>
+            <conn input="make_point1.x" output="sample1"/>
+            <conn input="connect1.points" output="make_point1"/>
+            <conn input="add1.value1" output="wave1"/>
+            <conn input="make_point1.y" output="add1"/>
+            <conn input="add1.value2" output="wave2"/>
+            <conn input="add2.value1" output="sample1"/>
+            <conn input="wave2.offset" output="add2"/>
+            <conn input="wave1.offset" output="sample1"/>
+            <conn input="multiply1.value1" output="frame1"/>
+            <conn input="add2.value2" output="multiply1"/>
+            <conn input="rotate1.shape" output="connect1"/>
+            <conn input="align1.shape" output="rotate1"/>
+            <conn input="fit1.shape" output="align1"/>
+            <conn input="colorize1.shape" output="fit1"/>
+        </node>
+        <node name="Corda8" position="37.00,7.00" prototype="core.network" renderedChild="colorize1">
+            <node name="add1" position="1.00,4.00" prototype="math.add"/>
+            <node name="add2" position="4.00,1.00" prototype="math.add"/>
+            <node name="align1" position="0.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="none"/>
+            </node>
+            <node name="colorize1" position="0.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+                <port name="stroke" type="color" value="#f4d700ff"/>
+                <port name="strokeWidth" type="float" value="17.0"/>
+            </node>
+            <node name="connect1" position="0.00,7.00" prototype="corevector.connect">
+                <port name="closed" type="boolean" value="false"/>
+            </node>
+            <node name="fit1" position="0.00,10.00" prototype="corevector.fit">
+                <port name="height" type="float" value="1346.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="frame1" position="4.00,-2.00" prototype="core.frame"/>
+            <node name="make_point1" position="0.00,6.00" prototype="corevector.make_point"/>
+            <node name="multiply1" position="4.00,-1.00" prototype="math.multiply">
+                <port name="value2" type="float" value="4.0"/>
+            </node>
+            <node name="rotate1" position="0.00,8.00" prototype="corevector.rotate">
+                <port name="angle" type="float" value="90.0"/>
+            </node>
+            <node name="sample1" position="0.00,-2.00" prototype="math.sample">
+                <port name="amount" type="int" value="30"/>
+                <port name="end" type="float" value="400.0"/>
+            </node>
+            <node name="wave1" position="1.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="42.0"/>
+                <port name="period" type="float" value="400.0"/>
+            </node>
+            <node name="wave2" position="4.00,2.00" prototype="math.wave">
+                <port name="max" type="float" value="-38.0"/>
+                <port name="period" type="float" value="200.0"/>
+            </node>
+            <port childReference="wave1.period" description="" label="" name="wavePeriod-1" range="value" type="float" value="400.0" widget="float"/>
+            <port childReference="wave2.period" description="" label="" name="wavePeriod-2" range="value" type="float" value="200.0" widget="float"/>
+            <port childReference="colorize1.stroke" description="The new stroke color." label="" name="strokeC" range="value" type="color" value="#f4d700ff" widget="color"/>
+            <port childReference="colorize1.strokeWidth" description="The new stroke width. Set to 0 for no stroke." label="" min="0.0" name="strokeWidth" range="value" type="float" value="17.0" widget="float"/>
+            <port childReference="multiply1.value2" description="" label="" name="Velocidade" range="value" type="float" value="4.0" widget="float"/>
+            <port childReference="wave1.max" description="" label="" name="max1" range="value" type="float" value="42.0" widget="float"/>
+            <port childReference="wave2.max" description="" label="" name="max2" range="value" type="float" value="-38.0" widget="float"/>
+            <conn input="make_point1.x" output="sample1"/>
+            <conn input="connect1.points" output="make_point1"/>
+            <conn input="add1.value1" output="wave1"/>
+            <conn input="make_point1.y" output="add1"/>
+            <conn input="add1.value2" output="wave2"/>
+            <conn input="add2.value1" output="sample1"/>
+            <conn input="wave2.offset" output="add2"/>
+            <conn input="wave1.offset" output="sample1"/>
+            <conn input="multiply1.value1" output="frame1"/>
+            <conn input="add2.value2" output="multiply1"/>
+            <conn input="rotate1.shape" output="connect1"/>
+            <conn input="align1.shape" output="rotate1"/>
+            <conn input="fit1.shape" output="align1"/>
+            <conn input="colorize1.shape" output="fit1"/>
+        </node>
+        <node name="align1" position="14.00,-1.00" prototype="corevector.align"/>
+        <node name="align2" position="37.00,-1.00" prototype="corevector.align"/>
+        <node name="characters1" position="14.00,-3.00" prototype="string.characters"/>
+        <node name="characters2" position="37.00,-3.00" prototype="string.characters"/>
+        <node name="colorize1" position="14.00,1.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="colorize2" position="2.00,13.00" prototype="corevector.colorize"/>
+        <node name="colorize3" position="37.00,1.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+            <port name="stroke" type="color" value="#ffffffff"/>
+        </node>
+        <node name="colorize4" position="25.00,13.00" prototype="corevector.colorize"/>
+        <node name="combine1" position="6.00,12.00" prototype="list.combine"/>
+        <node name="combine2" position="2.00,15.00" prototype="list.combine"/>
+        <node name="combine3" position="29.00,12.00" prototype="list.combine"/>
+        <node name="combine4" position="25.00,15.00" prototype="list.combine"/>
+        <node name="grid1" position="19.00,-2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="3"/>
+            <port name="rows" type="int" value="2"/>
+            <port name="width" type="float" value="594.0"/>
+            <port name="height" type="float" value="354.0"/>
+        </node>
+        <node name="grid2" position="42.00,-2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="3"/>
+            <port name="rows" type="int" value="2"/>
+            <port name="width" type="float" value="594.0"/>
+            <port name="height" type="float" value="399.0"/>
+            <port name="position" type="point" value="-19.00,0.00"/>
+        </node>
+        <node name="rect1" position="2.00,12.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1080.0"/>
+            <port name="height" type="float" value="1346.0"/>
+        </node>
+        <node name="rect2" position="25.00,12.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1080.0"/>
+            <port name="height" type="float" value="1346.0"/>
+        </node>
+        <node name="shuffle1" position="14.00,3.00" prototype="list.shuffle">
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="shuffle2" position="37.00,3.00" prototype="list.shuffle">
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="slice1" position="14.00,4.00" prototype="list.slice">
+            <port name="size" type="int" value="2"/>
+        </node>
+        <node name="slice2" position="17.00,4.00" prototype="list.slice">
+            <port name="start_index" type="int" value="2"/>
+            <port name="size" type="int" value="2"/>
+        </node>
+        <node name="slice3" position="20.00,4.00" prototype="list.slice">
+            <port name="start_index" type="int" value="4"/>
+            <port name="size" type="int" value="2"/>
+        </node>
+        <node name="slice4" position="40.00,4.00" prototype="list.slice">
+            <port name="start_index" type="int" value="2"/>
+            <port name="size" type="int" value="2"/>
+        </node>
+        <node name="slice5" position="43.00,4.00" prototype="list.slice">
+            <port name="start_index" type="int" value="4"/>
+            <port name="size" type="int" value="2"/>
+        </node>
+        <node name="slice6" position="37.00,4.00" prototype="list.slice">
+            <port name="size" type="int" value="2"/>
+        </node>
+        <node name="string1" position="14.00,-4.00" prototype="string.string">
+            <port name="value" type="string" value="IBR123"/>
+        </node>
+        <node name="string2" position="37.00,-4.00" prototype="string.string">
+            <port name="value" type="string" value="IBR123"/>
+        </node>
+        <node name="textpath1" position="14.00,-2.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="Arimo Bold"/>
+            <port name="font_size" type="float" value="360.0"/>
+            <port name="width" type="float" value="54.0"/>
+        </node>
+        <node name="textpath2" position="37.00,-2.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="Archive"/>
+            <port name="font_size" type="float" value="396.0"/>
+            <port name="width" type="float" value="54.0"/>
+        </node>
+        <node name="translate1" position="14.00,0.00" prototype="corevector.translate"/>
+        <node name="translate10" position="37.00,0.00" prototype="corevector.translate"/>
+        <node name="translate2" position="5.00,9.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-261.00,0.00"/>
+        </node>
+        <node name="translate3" position="8.00,9.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-128.00,0.00"/>
+        </node>
+        <node name="translate4" position="11.00,9.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="79.00,0.00"/>
+        </node>
+        <node name="translate5" position="14.00,9.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="285.00,0.00"/>
+        </node>
+        <node name="translate6" position="31.00,9.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-128.00,0.00"/>
+        </node>
+        <node name="translate7" position="28.00,9.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-261.00,0.00"/>
+        </node>
+        <node name="translate8" position="37.00,9.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="285.00,0.00"/>
+        </node>
+        <node name="translate9" position="34.00,9.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="79.00,0.00"/>
+        </node>
+        <node name="wiggle1" position="28.00,10.00" prototype="corevector.wiggle"/>
+        <node name="wiggle2" position="31.00,10.00" prototype="corevector.wiggle">
+            <port name="seed" type="int" value="3"/>
+        </node>
+        <node name="wiggle3" position="34.00,10.00" prototype="corevector.wiggle">
+            <port name="seed" type="int" value="5"/>
+        </node>
+        <node name="wiggle4" position="37.00,10.00" prototype="corevector.wiggle">
+            <port name="seed" type="int" value="4"/>
+        </node>
+        <conn input="translate2.shape" output="Corda2"/>
+        <conn input="translate3.shape" output="Corda1"/>
+        <conn input="combine1.list1" output="translate2"/>
+        <conn input="combine1.list3" output="translate3"/>
+        <conn input="translate4.shape" output="Corda3"/>
+        <conn input="combine1.list5" output="translate4"/>
+        <conn input="translate5.shape" output="Corda4"/>
+        <conn input="combine1.list7" output="translate5"/>
+        <conn input="characters1.string" output="string1"/>
+        <conn input="textpath1.text" output="characters1"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="align1.shape" output="textpath1"/>
+        <conn input="translate1.shape" output="align1"/>
+        <conn input="slice1.list" output="shuffle1"/>
+        <conn input="slice2.list" output="shuffle1"/>
+        <conn input="slice3.list" output="shuffle1"/>
+        <conn input="colorize1.shape" output="translate1"/>
+        <conn input="shuffle1.list" output="colorize1"/>
+        <conn input="combine1.list2" output="slice1"/>
+        <conn input="combine1.list4" output="slice2"/>
+        <conn input="combine1.list6" output="slice3"/>
+        <conn input="colorize2.shape" output="rect1"/>
+        <conn input="combine2.list1" output="colorize2"/>
+        <conn input="combine2.list7" output="combine1"/>
+        <conn input="translate7.shape" output="Corda6"/>
+        <conn input="translate6.shape" output="Corda5"/>
+        <conn input="translate9.shape" output="Corda7"/>
+        <conn input="translate8.shape" output="Corda8"/>
+        <conn input="characters2.string" output="string2"/>
+        <conn input="textpath2.text" output="characters2"/>
+        <conn input="translate10.translate" output="grid2"/>
+        <conn input="align2.shape" output="textpath2"/>
+        <conn input="translate10.shape" output="align2"/>
+        <conn input="slice6.list" output="shuffle2"/>
+        <conn input="slice4.list" output="shuffle2"/>
+        <conn input="slice5.list" output="shuffle2"/>
+        <conn input="colorize3.shape" output="translate10"/>
+        <conn input="shuffle2.list" output="colorize3"/>
+        <conn input="combine3.list2" output="slice6"/>
+        <conn input="combine3.list4" output="slice4"/>
+        <conn input="combine3.list6" output="slice5"/>
+        <conn input="colorize4.shape" output="rect2"/>
+        <conn input="combine4.list1" output="colorize4"/>
+        <conn input="combine4.list7" output="combine3"/>
+        <conn input="wiggle1.shape" output="translate7"/>
+        <conn input="combine3.list1" output="wiggle1"/>
+        <conn input="wiggle2.shape" output="translate6"/>
+        <conn input="combine3.list3" output="wiggle2"/>
+        <conn input="wiggle3.shape" output="translate9"/>
+        <conn input="combine3.list5" output="wiggle3"/>
+        <conn input="wiggle4.shape" output="translate8"/>
+        <conn input="combine3.list7" output="wiggle4"/>
+    </node>
+</ndbx>
